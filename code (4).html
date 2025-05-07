@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 搞钱案例 - 超级个体</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    colors: {
+                        'tech-purple': '#8A2BE2',
+                        'tech-pink': '#FF69B4',
+                        'tech-blue': '#00BFFF',
+                        'tech-green': '#32CD32',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .bento-box {
+            background-color: #1a1a1a; /* Darker gray for boxes */
+            border-radius: 1.5rem; /* 24px */
+            padding: 1.5rem; /* 24px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #2a2a2a;
+            display: flex;
+            flex-direction: column;
+            /*opacity: 0;  Initial state for Framer Motion */
+        }
+        .highlight-purple {
+            background: linear-gradient(90deg, rgba(138,43,226,0.7) 0%, rgba(138,43,226,0.1) 100%);
+        }
+        .highlight-pink {
+            background: linear-gradient(90deg, rgba(255,105,180,0.7) 0%, rgba(255,105,180,0.1) 100%);
+        }
+         .highlight-blue {
+            background: linear-gradient(90deg, rgba(0,191,255,0.7) 0%, rgba(0,191,255,0.1) 100%);
+        }
+        .highlight-green {
+            background: linear-gradient(90deg, rgba(50,205,50,0.7) 0%, rgba(50,205,50,0.1) 100%);
+        }
+        .gradient-text-purple {
+            background: linear-gradient(to right, #a855f7, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-orange {
+            background: linear-gradient(to right, #f97316, #ea580c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .line-art {
+            stroke: #4a4a4a;
+            stroke-width: 1;
+            fill: none;
+        }
+        /* Ensure full width for main container */
+        .main-container {
+            width: 100%;
+            max-width: 1280px; /* Optional: Set a max-width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 p-4 md:p-8">
+
+    <div id="app" class="main-container">
+        <!-- Intro Section -->
+        <motion.section class="mb-8 text-center">
+            <p class="text-lg text-gray-400 mb-2">Xuan酱 presents</p>
+            <h1 class="text-5xl md:text-7xl font-bold gradient-text-purple mb-4">AI搞钱超级个体</h1>
+            <p class="text-xl text-gray-300">他们用AI赚了1000万以上！</p>
+        </motion.section>
+
+        <!-- Individuals Overview -->
+        <motion.div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <motion.div class="bento-box col-span-1 md:col-span-1 flex flex-col items-center justify-center" data-motion>
+                <!-- Placeholder for Max Bohun Image -->
+				<img src="feitu.jpeg" alt="Max Bohun" class="w-24 h-24 rounded-full mb-3 object-cover">
+                <div class="w-24 h-24 bg-gray-700 rounded-full mb-3 flex items-center justify-center"><i class="fas fa-user text-4xl text-gray-500"></i></div>
+                <h3 class="text-xl font-semibold text-white">Max Bohun</h3>
+                <p class="text-3xl font-bold gradient-text-orange">50W$</p>
+                <p class="text-xs text-gray-400">AI改作业投资</p>
+            </motion.div>
+            <motion.div class="bento-box col-span-1 md:col-span-1 flex flex-col items-center justify-center" data-motion>
+                 <!-- Placeholder for Alex Slater Image -->
+                <div class="w-24 h-24 bg-gray-700 rounded-full mb-3 flex items-center justify-center"><i class="fas fa-user text-4xl text-gray-500"></i></div>
+                <h3 class="text-xl font-semibold text-white">Alex Slater</h3>
+                <p class="text-3xl font-bold gradient-text-orange">300W$</p>
+                <p class="text-xs text-gray-400">戒色APP</p>
+            </motion.div>
+            <motion.div class="bento-box col-span-1 md:col-span-1 flex flex-col items-center justify-center" data-motion>
+                 <!-- Placeholder for Blake Anderson Image -->
+                <div class="w-24 h-24 bg-gray-700 rounded-full mb-3 flex items-center justify-center"><i class="fas fa-user text-4xl text-gray-500"></i></div>
+                <h3 class="text-xl font-semibold text-white">Blake Anderson</h3>
+                <p class="text-3xl font-bold gradient-text-orange">1000W$</p>
+                <p class="text-xs text-gray-400">AI恋爱/颜值APP</p>
+            </motion.div>
+            <motion.div class="bento-box col-span-1 md:col-span-1 flex flex-col items-center justify-center" data-motion>
+                 <!-- Placeholder for Pieter Levels Image -->
+                <div class="w-24 h-24 bg-gray-700 rounded-full mb-3 flex items-center justify-center"><i class="fas fa-user text-4xl text-gray-500"></i></div>
+                <h3 class="text-xl font-semibold text-white">Pieter Levels</h3>
+                <p class="text-3xl font-bold gradient-text-orange">320W$</p>
+                <p class="text-xs text-gray-400">数字游民多项目</p>
+            </motion.div>
+        </motion.div>
+
+        <!-- Lao Li's Case Studies Start -->
+        <motion.section class="my-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-6 gradient-text-purple">老李深度解析 <span class="text-lg text-purple-400 block">AI MONEY CASES</span></h2>
+        </motion.section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Alex Slater: QUITTR -->
+            <motion.div class="bento-box md:col-span-2 lg:col-span-2" data-motion>
+                <h3 class="text-2xl font-bold text-white mb-1">Alex Slater <span class="text-tech-pink text-lg">(19岁)</span></h3>
+                <p class="text-sm text-purple-300 uppercase tracking-wider mb-3">戒色APP - QUITTR</p>
+                <p class="text-gray-300 mb-4">受NoFap社区启发，发现市场空白。与17岁弟弟联手，用AI开发戒色App <strong class="text-tech-pink">QUITTR</strong>。</p>
+                <div class="mt-auto">
+                    <p class="text-4xl lg:text-6xl font-black gradient-text-orange">300W<span class="text-2xl text-gray-400">$</span></p>
+                    <p class="text-xs text-gray-400">预估年收入 (3个月赚100W$)</p>
+                </div>
+            </motion.div>
+
+            <motion.div class="bento-box" data-motion>
+                <h4 class="text-lg font-semibold text-white mb-2"><i class="fas fa-cogs mr-2 text-tech-blue"></i>QUITTR 核心功能</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm">
+                    <li>色瘾指数分析</li>
+                    <li>定制化戒色计划</li>
+                    <li>打卡与游戏化闯关</li>
+                    <li><strong class="text-tech-blue">网络过滤器</strong> (识别过滤不良画面)</li>
+                    <li><strong class="text-tech-blue">紧急按钮</strong> (冲动时提醒)</li>
+                    <li>社区互助</li>
+                </ul>
+            </motion.div>
+
+            <motion.div class="bento-box highlight-blue" data-motion>
+                 <h4 class="text-lg font-semibold text-white mb-2"><i class="fas fa-rocket mr-2"></i>快速开发与推广</h4>
+                 <p class="text-gray-200 text-sm mb-2">前端: <span class="font-mono text-tech-blue bg-black/30 px-1 rounded">SwiftUI</span></p>
+                 <p class="text-gray-200 text-sm mb-2">后端: AI实现复杂功能</p>
+                 <p class="text-gray-200 text-sm mb-4">仅用 <strong class="text-2xl">10</strong> 天完成初版！</p>
+                 <p class="text-gray-200 text-sm">推广: TikTok健身网红合作</p>
+            </motion.div>
+
+            <!-- Blake Anderson: Plug AI & Umax -->
+            <motion.div class="bento-box md:col-span-2 lg:col-span-2" data-motion>
+                <h3 class_alias="text-2xl font-bold text-white mb-1">Blake Anderson</h3>
+                <p class="text-sm text-purple-300 uppercase tracking-wider mb-3">AI约会/颜值APP</p>
+                <p class="text-gray-300 mb-2">2023年还是穷毕业生，靠朋友沙发度日。用 <strong class="text-tech-green">ChatGPT</strong> 开发 <strong class="text-tech-green">Plug AI</strong> (教人约会)，<strong class="text-tech-green">99%</strong> 代码AI写。</p>
+                <p class="text-gray-300 mb-4">后开发 <strong class="text-tech-green">Umax</strong> (颜值提升App)，<strong class="text-tech-green">85%</strong> 代码AI写，GPT-4多模态识别图片。</p>
+                 <div class="mt-auto">
+                    <p class="text-4xl lg:text-6xl font-black gradient-text-orange">1000W<span class="text-2xl text-gray-400">$ +</span></p>
+                    <p class="text-xs text-gray-400">多款App总变现超</p>
+                </div>
+            </motion.div>
+
+            <motion.div class="bento-box" data-motion>
+                <h4 class="text-lg font-semibold text-white mb-2"><i class="fas fa-lightbulb mr-2 text-tech-green"></i>洞察与执行</h4>
+                <p class="text-gray-300 text-sm mb-2">痛点: 不会聊天、想提升颜值。</p>
+                <p class="text-gray-300 text-sm mb-2">Plug AI: 变现超 <strong class="text-tech-green">400W$</strong></p>
+                <p class="text-gray-300 text-sm mb-2">Umax: 变现超 <strong class="text-tech-green">600W$</strong></p>
+                <p class="text-gray-300 text-sm">Cal AI (卡路里): 变现 <strong class="text-tech-green">800W$</strong></p>
+            </motion.div>
+            <motion.div class="bento-box highlight-green relative overflow-hidden" data-motion>
+                <i class="fas fa-chart-line text-8xl text-tech-green/10 absolute -right-4 -bottom-4"></i>
+                <h4 class="text-lg font-semibold text-white mb-2">市场验证与推广</h4>
+                <p class="text-gray-200 text-sm mb-2">Reddit社区验证颜值提升需求。</p>
+                <p class="text-gray-200 text-sm mb-2">营销: TikTok网红推广。</p>
+                <p class="text-gray-200 text-sm">迅速占领市场，击败竞品。</p>
+            </motion.div>
+
+            <!-- Pieter Levels -->
+            <motion.div class="bento-box md:col-span-2 lg:col-span-2" data-motion>
+                <h3 class_alias="text-2xl font-bold text-white mb-1">Pieter Levels</h3>
+                <p class="text-sm text-purple-300 uppercase tracking-wider mb-3">数字游民的极致</p>
+                <p class="text-gray-300 mb-4">“<strong class="text-tech-blue">一人就是一家公司</strong>”的典范。2010年开始数字游民生活，足迹遍布40+国家，150+城市。</p>
+                <div class="grid grid-cols-2 gap-2 text-sm mb-4">
+                    <div><i class="fas fa-globe-americas text-tech-blue mr-1"></i>Nomad List: <span class="text-white font-semibold">$22k/m</span></div>
+                    <div><i class="fas fa-briefcase text-tech-blue mr-1"></i>RemoteOK: <span class="text-white font-semibold">$32k/m</span></div>
+                    <div><i class="fas fa-camera-retro text-tech-blue mr-1"></i>PhotoAI: <span class="text-white font-semibold">$116k/m</span></div>
+                    <div><i class="fas fa-couch text-tech-blue mr-1"></i>InteriorAI: <span class="text-white font-semibold">$41k/m</span></div>
+                </div>
+                 <div class="mt-auto">
+                    <p class="text-4xl lg:text-6xl font-black gradient-text-orange">320W<span class="text-2xl text-gray-400">$</span></p>
+                    <p class="text-xs text-gray-400">月均总收入</p>
+                </div>
+            </motion.div>
+
+            <motion.div class="bento-box" data-motion>
+                <h4 class="text-lg font-semibold text-white mb-2"><i class="fas fa-code-branch mr-2 text-tech-pink"></i>开发哲学</h4>
+                <p class="text-gray-300 text-sm mb-2">超高开发效率：12个月开发12个项目。</p>
+                <p class="text-gray-300 text-sm mb-2">快速试错：项目不行马上换。</p>
+                <p class="text-gray-300 text-sm mb-2">成功率：<strong class="text-tech-pink text-2xl">5%</strong> (95%失败率)</p>
+                <p class="text-gray-300 text-sm">近期采访：Lex Fridman播客</p>
+            </motion.div>
+             <motion.div class="bento-box highlight-pink flex items-center justify-center" data-motion>
+                <svg class="w-24 h-24 line-art" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80 Q50 20 80 80 T20 80" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="10" fill="rgba(255,105,180,0.3)"/>
+                </svg>
+                <p class="text-center text-white mt-2">持续创新 <span class="block text-xs text-gray-300">Continuous Innovation</span></p>
+            </motion.div>
+
+            <!-- Max Bohun: GradeWiz -->
+             <motion.div class="bento-box" data-motion>
+                <h3 class="text-2xl font-bold text-white mb-1">Max Bohun</h3>
+                <p class="text-sm text-purple-300 uppercase tracking-wider mb-3">AI作业批改</p>
+                <p class="text-gray-300 mb-2">大学助教，帮教授批改作业，人工繁琐。</p>
+                <p class="text-gray-300 mb-2">用AI结合批改作业，开发 <strong class="text-tech-blue">GradeWiz</strong> 自动批改系统。</p>
+                 <div class="mt-auto">
+                    <p class="text-4xl lg:text-6xl font-black gradient-text-orange">50W<span class="text-2xl text-gray-400">$</span></p>
+                    <p class="text-xs text-gray-400">种子轮融资</p>
+                </div>
+            </motion.div>
+
+            <!-- Lao Li's Summary of Success Factors -->
+            <motion.div class="bento-box md:col-span-3 lg:col-span-3 highlight-purple" data-motion>
+                <h3 class="text-2xl font-bold text-white mb-3 text-center">成功秘诀 <span class="text-lg text-purple-200 block">KEY SUCCESS FACTORS</span></h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                    <div class="p-3 bg-black/20 rounded-lg">
+                        <i class="fas fa-running text-3xl text-purple-300 mb-2"></i>
+                        <h4 class="font-semibold text-white">执行力</h4>
+                        <p class="text-xs text-purple-200">Action-Oriented</p>
+                    </div>
+                    <div class="p-3 bg-black/20 rounded-lg">
+                        <i class="fas fa-lightbulb text-3xl text-purple-300 mb-2"></i>
+                        <h4 class="font-semibold text-white">抓AI风口</h4>
+                        <p class="text-xs text-purple-200">AI Trend Adoption</p>
+                    </div>
+                    <div class="p-3 bg-black/20 rounded-lg">
+                        <i class="fas fa-crosshairs text-3xl text-purple-300 mb-2"></i>
+                        <h4 class="font-semibold text-white">抓准痛点</h4>
+                        <p class="text-xs text-purple-200">Niche Pain Points</p>
+                    </div>
+                    <div class="p-3 bg-black/20 rounded-lg">
+                        <i class="fas fa-bullhorn text-3xl text-purple-300 mb-2"></i>
+                        <h4 class="font-semibold text-white">快速推广</h4>
+                        <p class="text-xs text-purple-200">Rapid Promotion</p>
+                    </div>
+                </div>
+            </motion.div>
+
+            <!-- AI Restructuring Businesses -->
+            <motion.div class="bento-box md:col-span-2" data-motion>
+                <h3 class="text-2xl font-bold text-white mb-3">AI重构现有业务 <span class="text-lg text-purple-300 block">AI RESTRUCTURING BUSINESS</span></h3>
+                <div class="space-y-3">
+                    <div>
+                        <h4 class="font-semibold text-tech-pink">Rezi (Jacob Jacquet)</h4>
+                        <p class="text-sm text-gray-300">简历优化平台，接入ChatGPT-3后，月收入 <strong class="text-tech-pink">25W$</strong>，用户 <strong class="text-tech-pink">300W+</strong>。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-tech-blue">Mercor (三位21岁小哥)</h4>
+                        <p class="text-sm text-gray-300">AI招聘平台，对接外包程序员与大公司。估值 <strong class="text-tech-blue">20亿美金</strong>。</p>
+                    </div>
+                </div>
+            </motion.div>
+
+            <motion.div class="bento-box md:col-span-2" data-motion>
+                <h3 class="text-2xl font-bold text-white mb-3">小白如何用AI做App? <span class="text-lg text-purple-300 block">AI FOR APP DEV</span></h3>
+                <p class="text-gray-300 mb-3 text-sm">AI大大降低编程门槛。建议先学基础，再用AI辅助。</p>
+                <div class_alias="grid grid-cols-2 gap-2 text-sm">
+                    <p class="font-semibold text-white">海外推荐:</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Cursor (AI代码编辑器)</li>
+                        <li>V0.dev (AI生成UI)</li>
+                        <li>FirebaseStudio (谷歌AI后端)</li>
+                    </ul>
+                    <p class="font-semibold text-white mt-2">国内推荐:</p>
+                     <ul class="list-disc list-inside text-gray-300">
+                        <li>Trae (AI编程工具)</li>
+                    </ul>
+                </div>
+                <p class="text-xs text-gray-400 mt-3">App变现建议先做iOS版，付费意愿更强。</p>
+            </motion.div>
+
+
+        </div> <!-- End Main Grid -->
+
+        <motion.footer class="mt-12 text-center text-gray-500 text-sm" data-motion>
+            <p>由 Xuan酱 AI 驱动 | All rights reserved © 2024</p>
+            <p>内容总结自视频，数据仅供参考。</p>
+        </motion.footer>
+
+    </div>
+
+    <script>
+        // Note: For direct browser use without a build step, you'd link to the ESM build of Framer Motion.
+        // For simplicity in a single HTML file, I'm using a more direct approach.
+        // A proper setup would use import { motion } from "framer-motion";
+        // This example assumes Framer Motion is globally available via CDN.
+        // If using CDN: <script src="https://cdn.jsdelivr.net/npm/framer-motion@latest/dist/framer-motion.js"></script> before this script.
+        // However, direct global `motion` is not how it usually works.
+        // Let's simulate the scroll-triggered animation with Intersection Observer for this CDN setup.
+
+        const animatedElements = document.querySelectorAll('[data-motion]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = `fadeInUp 0.6s ease-out forwards`;
+                    // Optional: add a delay based on index for staggered effect
+                    // const delay = Array.from(animatedElements).indexOf(entry.target) * 0.1;
+                    // entry.target.style.animationDelay = `${delay}s`;
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <!-- If you decide to use Framer Motion directly via CDN for its full API (more complex setup for single file) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/framer-motion@10/dist/framer-motion.umd.js"></script> -->
+    <!-- Then you could potentially use React-like components or a vanilla JS wrapper for Framer Motion -->
+
+</body>
+</html>
